@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetBramha Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">NETBRAMHA</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-item active" data-section="overview">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                    </svg>
+                    <span class="nav-text">Overview</span>
+                    <span class="nav-arrow">▼</span>
+                </div>
+                <div class="nav-submenu">
+                    <div class="nav-subitem active">Score & Report</div>
+                    <div class="nav-subitem">Summary</div>
+                    <div class="nav-subitem">History</div>
+                    <div class="nav-subitem">Where You Stand</div>
+                </div>
+            </div>
+
+            <div class="nav-item" data-section="report">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                </svg>
+                <span class="nav-text">Your Report</span>
+            </div>
+
+            <div class="nav-item" data-section="alerts">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21" />
+                </svg>
+                <span class="nav-text">Alerts</span>
+                <span class="alert-badge">4</span>
+            </div>
+
+            <div class="nav-item" data-section="simulator">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M13,7H18V10H13V7M18,13V16H13V13H18M6,7H11V16H6V7Z" />
+                </svg>
+                <span class="nav-text">Simulator</span>
+            </div>
+
+            <div class="nav-item" data-section="education">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z" />
+                </svg>
+                <span class="nav-text">Education</span>
+            </div>
+
+            <div class="nav-item" data-section="upgrade">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" />
+                </svg>
+                <span class="nav-text">Upgrade My Plan</span>
+            </div>
+
+            <div class="nav-item" data-section="rewards">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10M7,22H17L15.5,20.5L17,19L15.5,17.5L17,16H7L8.5,17.5L7,19L8.5,20.5L7,22M8,2H16L17,4H22L20,8L22,12H17L16,14H8L7,12H2L4,8L2,4H7L8,2Z" />
+                </svg>
+                <span class="nav-text">Rewards Program</span>
+            </div>
+        </nav>
+    </aside>
+
+
+    <header class="header">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <img src="assets/Menu-icon.png" alt="Menu Icon" class="icon-img menu-icons">
+            </button>
+        </div>
+        <div class="header-right">
+            <div class="nav-item">
+                <img src="assets/Help.png" alt="Help Icon" class="icon-img">
+                <span>How It Works</span>
+            </div>
+            <div class="nav-item">
+                <img src="assets/Language.png" alt="Language Icon" class="icon-img">
+                <span>English</span>
+                <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="nav-item">
+                <img src="assets/account.png" alt="Account Icon" class="icon-img">
+                <span>My Account</span>
+            </div>
+            <div class="nav-item">
+                <img src="assets/Logout.png" alt="Logout Icon" class="icon-img">
+                <span>Logout</span>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <main class="main-content">
+        <div class="dashboard-container">
+
+            <section class="score-section">
+
+                <div class="score-main-card">
+                    <h2>Hello, Rahul L.</h2>
+
+                    <div class="score-gauge-container">
+                        <svg class="score-gauge" width="300" height="180" viewBox="0 0 300 180">
+                            <defs>
+                                <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#DC2626" />
+                                    <stop offset="25%" style="stop-color:#EA580C" />
+                                    <stop offset="50%" style="stop-color:#FBBF24" />
+                                    <stop offset="75%" style="stop-color:#84CC16" />
+                                    <stop offset="100%" style="stop-color:#16A34A" />
+                                </linearGradient>
+                            </defs>
+
+
+                            <path d="M 60 140 A 90 90 0 0 1 240 140" stroke="#E5E7EB" stroke-width="16" fill="none"
+                                stroke-linecap="round" />
+
+                            <path d="M 60 140 A 90 90 0 0 1 240 140" stroke="url(#scoreGradient)" stroke-width="16"
+                                fill="none" stroke-linecap="round" />
+
+
+                            <text x="60" y="160" class="score-range-text">300</text>
+                            <text x="240" y="160" class="score-range-text">900</text>
+
+
+                            <line id="gaugeNeedle" x1="150" y1="140" x2="150" y2="70" stroke="#1F2937" stroke-width="3"
+                                stroke-linecap="round" transform="rotate(-90 150 140)" />
+
+
+                            <circle cx="150" cy="140" r="6" fill="#1F2937" />
+                        </svg>
+
+                        <div class="score-display">
+                            <div class="score-value" id="scoreValue">767</div>
+                            <div class="score-description">
+                                is your <span class="nb-text">NB</span> Score as of 19th Apr ‘22
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="score-actions">
+                        <a href="#" class="score-link">Score Analysis</a>
+                        <button class="btn-primary" id="refreshBtn">Refresh Now</button>
+                    </div>
+                </div>
+
+
+                <div class="report-section">
+
+                    <div class="nb-report-card">
+                        <div class="report-header">
+                            <h3>NB REPORT</h3>
+                            <div class="report-icon">
+                                <img src="assets/NB-Report.png" alt="Report Icon" width="80" height="80">
+                            </div>
+                        </div>
+                        <p>Get your personalized NB Report to plan your financial future.</p>
+                        <div class="report-links">
+                            <a href="#" class="report-link">
+                                <img src="assets/Eyeicon (1).png" alt="View Icon" width="24" height="24">
+                                View Your NB Report <span class="link-arrow">›</span>
+                            </a>
+                            <a href="#" class="report-link">
+                                <img src="assets/Foldericon.png" alt="Download Icon" width="24" height="24">
+                                Download Your NB Report With Summary <span class="link-arrow">›</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="subscription-card">
+                        <div class="subscription-content">
+                            <p>You currently have an active subscription. You will be able to access Free Annual NB
+                                Score & Report after the subscription period expires.</p>
+                        </div>
+                        <div class="subscription-illustration">
+                            <img src="assets/Settled Credit.png" alt="Subscription Illustration" width="182"
+                                height="117">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="accounts-section">
+
+                <div class="accounts-main-card">
+                    <div class="accounts-header">
+                        <h3>
+                            Your Accounts
+                            <svg class="info-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                            </svg>
+                        </h3>
+                        <div class="account-filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="open">Open</button>
+                            <button class="filter-btn" data-filter="closed">Closed</button>
+                        </div>
+                    </div>
+
+                    <div class="accounts-content">
+
+                        <div class="accounts-chart">
+                            <svg width="200" height="200" viewBox="0 0 200 200">
+                                <g transform="translate(100,100)">
+                                    <circle cx="0" cy="0" r="70" fill="none" stroke="#8B5CF6" stroke-width="20"
+                                        stroke-dasharray="100 440" transform="rotate(-90)"
+                                        class="chart-segment purple" />
+                                    <circle cx="0" cy="0" r="70" fill="none" stroke="#FDE047" stroke-width="20"
+                                        stroke-dasharray="25 440" stroke-dashoffset="-100" transform="rotate(-90)"
+                                        class="chart-segment yellow" />
+                                    <circle cx="0" cy="0" r="70" fill="none" stroke="#38BDF8" stroke-width="20"
+                                        stroke-dasharray="50 440" stroke-dashoffset="-125" transform="rotate(-90)"
+                                        class="chart-segment cyan" />
+                                    <circle cx="0" cy="0" r="70" fill="none" stroke="#22C55E" stroke-width="20"
+                                        stroke-dasharray="265 440" stroke-dashoffset="-175" transform="rotate(-90)"
+                                        class="chart-segment green" />
+                                </g>
+                                <text x="100" y="90" text-anchor="middle" class="chart-center-text">Total</text>
+                                <text x="100" y="110" text-anchor="middle" class="chart-center-text">Accounts</text>
+                                <text x="100" y="140" text-anchor="middle" class="chart-center-number"
+                                    id="totalAccounts">13</text>
+                            </svg>
+                        </div>
+
+
+                        <div class="accounts-legend" id="accountsLegend">
+                            <div class="account-item">
+                                <div class="account-indicator" style="background-color:#7E79DD;"></div>
+                                <span class="account-type">Closed credit cards</span>
+                                <span class="account-count">4</span>
+                            </div>
+                            <div class="account-item">
+                                <div class="account-indicator" style="background-color:#FDE866;"></div>
+                                <span class="account-type">Closed loans</span>
+                                <span class="account-count">1</span>
+                            </div>
+                            <div class="account-item">
+                                <div class="account-indicator" style="background-color:#99DBEA;"></div>
+                                <span class="account-type">Open credit cards</span>
+                                <span class="account-count">2</span>
+                            </div>
+                            <div class="account-item">
+                                <div class="account-indicator" style="background-color:#67D995;"></div>
+                                <span class="account-type">Open loans</span>
+                                <span class="account-count">6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="disputes-section">
+
+                    <div class="disputes-card">
+                        <div class="disputes-icon">
+                            <img src="assets/Dispute-icon.png" alt="Disputes Icon" />
+                        </div>
+                        <div class="disputes-info">
+                            <div class="disputes-header">
+                                <span class="disputes-title">Total Disputes</span>
+                                <span class="disputes-number">12</span>
+                            </div>
+                            <p>Learn more about credit reporting and related policies.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+
+                    <div class="enquiries-card">
+                        <div class="enquiries-icon">
+                            <img src="assets/Enquiry-icon.png" alt="Enquiries Icon" />
+                        </div>
+                        <div class="enquiries-info">
+                            <div class="enquiries-header">
+                                <span class="enquiries-title">Total Enquiries</span>
+                                <span class="enquiries-number">05</span>
+                            </div>
+                            <p class="enquiries-subtitle">(In last 3 years)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section class="score-history-section">
+                <div class="score-history-card">
+                    <div class="history-header">
+                        <h3> NB SCORE HISTORY <svg class="info-icon" width="16" height="16" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                            </svg> </h3>
+                        <p>Trended view of the changes in your NB Score with every refresh.</p>
+                    </div>
+                    <div class="chart-container">
+                        <div class="line-chart"> <svg width="100%" height="350" viewBox="0 0 600 350"
+                                preserveAspectRatio="xMidYMid meet" class="graph-data">
+                                <defs>
+                                    <pattern id="grid" width="60" height="40" patternUnits="userSpaceOnUse">
+                                        <path d="M 60 0 L 0 0 0 40" fill="none" stroke="#E5E7EB" stroke-width="1" />
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="300" fill="url(#grid)" />
+                                <g class="y-axis"> <text x="30" y="50" class="chart-axis-label">900</text> <text x="30"
+                                        y="90" class="chart-axis-label">800</text> <text x="30" y="130"
+                                        class="chart-axis-label">700</text> <text x="30" y="170"
+                                        class="chart-axis-label">600</text> <text x="30" y="210"
+                                        class="chart-axis-label">500</text> <text x="30" y="250"
+                                        class="chart-axis-label">400</text> <text x="30" y="290"
+                                        class="chart-axis-label">300</text> </g>
+                                <g class="x-axis"> <text x="80" y="320" class="chart-axis-label">JAN</text> <text
+                                        x="140" y="320" class="chart-axis-label">FEB</text> <text x="200" y="320"
+                                        class="chart-axis-label">MAR</text> <text x="260" y="320"
+                                        class="chart-axis-label">APR</text> <text x="320" y="320"
+                                        class="chart-axis-label">MAY</text> <text x="380" y="320"
+                                        class="chart-axis-label">JUN</text> <text x="440" y="320"
+                                        class="chart-axis-label">JUL</text> <text x="500" y="320"
+                                        class="chart-axis-label">AUG</text> <text x="560" y="320"
+                                        class="chart-axis-label">SEP</text> </g>
+                                <polyline points="260,180 320,150 380,200 500,170" fill="none" stroke="#06B6D4"
+                                    stroke-width="2" class="score-line" />
+                                <g class="score-point-group">
+                                    <circle cx="260" cy="180" r="4" fill="#06B6D4" />
+                                    <rect x="245" y="155" width="30" height="20" rx="3" fill="#06B6D4" /> <text x="260"
+                                        y="170" fill="white" text-anchor="middle">520</text>
+                                </g>
+                                <g class="score-point-group">
+                                    <circle cx="320" cy="150" r="4" fill="#06B6D4" />
+                                    <rect x="305" y="125" width="30" height="20" rx="3" fill="#06B6D4" /> <text x="320"
+                                        y="140" fill="white" text-anchor="middle">580</text>
+                                </g>
+                                <g class="score-point-group">
+                                    <circle cx="380" cy="200" r="4" fill="#06B6D4" />
+                                    <rect x="365" y="175" width="30" height="20" rx="3" fill="#06B6D4" /> <text x="380"
+                                        y="190" fill="white" text-anchor="middle">493</text>
+                                </g>
+                                <g class="score-point-group">
+                                    <circle cx="500" cy="170" r="4" fill="#FACC15" />
+                                    <rect x="485" y="145" width="30" height="20" rx="3" fill="#FACC15" /> <text x="500"
+                                        y="160" fill="white" text-anchor="middle">510</text>
+                                </g>
+                            </svg> </div>
+                        <div class="score-history-sidebar">
+                            <h4>August 2022</h4>
+                            <div class="history-entries">
+                                <div class="history-entry"> <span class="trend-icon"> <img src="assets/Group- (2).png"
+                                            alt="Up" width="16" height="16"> </span> <span
+                                        class="history-score">493</span> <span class="history-date">18/08/2022</span>
+                                </div>
+                                <div class="history-entry"> <span class="trend-icon"> <img src="assets/Group- (1).png"
+                                            alt="Down" width="16" height="16"> </span> <span
+                                        class="history-score">490</span> <span class="history-date">16/08/2022</span>
+                                </div>
+                                <div class="history-entry"> <span class="trend-icon"> <img src="assets/Group- (4).png"
+                                            alt="Up" width="16" height="16"> </span> <span
+                                        class="history-score">510</span> <span class="history-date">14/08/2022</span>
+                                </div>
+                                <div class="history-entry"> <span class="trend-icon"> <img src="assets/Group- (3).png"
+                                            alt="Right" width="16" height="16"> </span> <span
+                                        class="history-score">509</span> <span class="history-date">12/08/2022</span>
+                                </div>
+                                <div class="history-entry"> <span class="trend-icon"> <img src="assets/Group- (2).png"
+                                            alt="No History" width="16" height="16"> </span> <span
+                                        class="history-score no-score">N/H</span> <span
+                                        class="history-date">09/08/2022</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+        </section>
+
+
+
+
+
+        <section class="where-you-stand-section">
+            <div class="section-header">
+                <h3>
+                    WHERE YOU STAND
+                    <img src="assets/Stand-icon.png" alt="Info" class="info-icon" />
+                </h3>
+            </div>
+
+            <div class="where-you-stand-card">
+                <div class="score-bar-container">
+
+                    <div class="score-bar">
+                        <div class="bar-segment red" style="width: 15%">
+                            <span class="segment-label">15%</span>
+                        </div>
+                        <div class="bar-segment orange" style="width: 22%">
+                            <span class="segment-label">22%</span>
+                        </div>
+                        <div class="bar-segment yellow" style="width: 26%">
+                            <span class="segment-label">26%</span>
+                        </div>
+                        <div class="bar-segment light-green" style="width: 18%">
+                            <span class="segment-label">18%</span>
+                        </div>
+                        <div class="bar-segment green" style="width: 20%">
+                            <span class="segment-label">20%</span>
+                        </div>
+                    </div>
+
+
+                    <div class="score-indicator">
+                        <img src="assets/Arrow-icon.png" alt="Arrow Indicator" class="indicator-arrow" />
+                        <div class="current-score">
+                            <div class="score-title">Your NB Score</div>
+                            <div class="score-number">767</div>
+                        </div>
+                    </div>
+
+                    <div class="score-ranges">
+                        <div class="range-item">
+                            <spna>Scrore Range</spna>
+                            <span class="range-color red-dot"></span>
+                            <span class="range-text"><strong>300-722</strong></span>
+                        </div>
+                        <div class="range-item">
+                            <span class="range-color orange-dot"></span>
+                            <span class="range-text"><strong>723-747</strong></span>
+                        </div>
+                        <div class="range-item">
+                            <span class="range-color yellow-dot"></span>
+                            <span class="range-text"><strong>748-764</strong></span>
+                        </div>
+                        <div class="range-item">
+                            <span class="range-color light-green-dot"></span>
+                            <span class="range-text"><strong>765-777</strong></span>
+                        </div>
+                        <div class="range-item">
+                            <span class="range-color green-dot"></span>
+                            <span class="range-text"><strong>778-900</strong></span>
+                        </div>
+                    </div>
+
+
+                    <div class="score-description">
+                        <p>Your NB Score lies in the top <strong>70%</strong> in All Of India.</p>
+                        <small>Based on the NB Data</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <p class="footer-copy">
+                    © Copyright 2025 NetBramha Studio LLP. All Rights Reserved.
+                </p>
+                <ul class="footer-links">
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Raise a Dispute</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
